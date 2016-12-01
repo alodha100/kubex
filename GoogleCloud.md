@@ -64,17 +64,17 @@ It will setup the following in your client machine
 3. kubectl expose deployment dimusicweb --type="LoadBalancer"
 
 
-###6. Run your E-Commerce Application using Kubectl
+###7. Run your E-Commerce Application using Kubectl
 
 1. kubectl set image deployment/dimusicweb dimusicweb=gcr.io/$PROJECT_ID/dimusic-standalone-web:v2
 
-###7. Scale/Autoscale your applications
+###8. Scale/Autoscale your applications
 
 1. kubectl scale --current-replicas=2 --replicas=3 deployment/dimusicweb
 
 2. kubectl autoscale deployment dimusicweb --min=2 --max=10 --cpu-percent=60
 
-###8. Teardown cluster
+###9. Teardown cluster
 
 1. kubectl delete service,deployment dimusicweb
 
