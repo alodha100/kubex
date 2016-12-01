@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: dimusic-yaml
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: dimusic-yml
+        version:v1
+    spec:
+      containers:
+      - name: dimusic-yml
+        image: gcr.io/nithyaiodemo/dimusicweb:v1
+        ports:
+        - containerPort: 80
