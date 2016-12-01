@@ -25,6 +25,9 @@ It will setup the following in your client machine
 
 ###2. Create project in google cloud - Using Google Cloud Console
 
+Optionally you can create via gcloud cli
+              gcloud alpha projects create
+
 
 ###3. Configure Google Cloud SDK
        
