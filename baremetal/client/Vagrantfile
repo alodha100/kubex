@@ -1,0 +1,24 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+
+
+Vagrant.configure(2) do |config|
+
+  config.vm.box = "bento/centos-7.1"
+  config.vm.provision "shell" , path: "install.sh", privileged:false
+
+    config.vm.network "forwarded_port", guest: 8001, host: 3000
+    config.vm.define "k8s-client" do |minion|
+      minion.vm.network "public_network", ip: "192.168.0.200"
+      minion.vm.hostname = "k8s-client"
+      minion.vm.provider "virtualbox" do |vb|
+       vb.memory = "2048"
+       vb.cpus = 2
+      end
+	end
+      
+  
+end
+
+
