@@ -1,0 +1,9 @@
+ports:
+- name: liveness-port
+  containerPort: 8080
+  hostPort: 8080
+
+livenessProbe:
+  httpGet:
+  path: /healthz
+  port: liveness-port
